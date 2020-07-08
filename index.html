@@ -1,36 +1,43 @@
 ﻿<!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<script type="text/javascript">
-check_data=function(){
- if(document.getElementsByName('account')[0].value.length==0)
-  {
-    alert("請填入帳號");
-    return false;
-   }
- if(document.getElementsByName('password')[0].value.length==0)
-  {
-    alert("請輸入密碼");
-    return false;
-  }
- 
-    document.getElementById("myFont").submit()
- }
-</script>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        check_data = function() {
+            if (document.getElementsByName('account')[0].value.length == 0) {
+                alert("請填入帳號");
+                return false;
+            }
+            if (document.getElementsByName('password')[0].value.length == 0) {
+                alert("請輸入密碼");
+                return false;
+            }
+
+            document.getElementById("myFont").submit()
+        }
+    </script>
 </head>
+
 <body>
-<form action="try_array.php" method="Post" id="myFont">
+    <form action="try_array.php" method="Post" id="myFont">
 
-<p><font>帳號:<input name="account"></input></font></p>
+        <p>
+            <font>帳號:<input name="account"></input>
+            </font>
+        </p>
 
-<p><font>密碼:<input name="password"></input></font></p>
+        <p>
+            <font>密碼:<input type="password" name="password"></input>
+            </font>
+        </p>
 
-<input value="登入" type="button" onclick="check_data()"></input>
+        <input value="登入" type="button" onclick="check_data()"></input>
 
-<input value="清除" type="reset">
+        <input value="清除" type="reset">
 
-<input value="註冊" type="button" onclick="location.href='join.html'"></input>
-</form>
+        <input value="註冊" type="button" onclick="location.href='join.html'"></input>
+    </form>
 </body>
+
 </html>
