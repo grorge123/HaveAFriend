@@ -11,7 +11,10 @@ if(in_array($account,$font)){
     $key=array_search($account,$font);
 }
 else{
-echo('帳密錯誤');
+       echo"<script type='text/javascript'>";
+	  echo"alert('你的帳號錯誤');";
+	  echo"history.back();";
+	  echo"</script>";
 }
 $sql="SELECT password FROM users";
 $result=execute_sql($link,"member",$sql);
@@ -19,7 +22,10 @@ $pass=mysqli_fetch_row($result);
 if($pass[$key]==$password){
 }
 else{
-echo('帳密錯誤');
+       echo"<script type='text/javascript'>";
+	  echo"alert('你的帳號錯誤');";
+	  echo"history.back();";
+	  echo"</script>";
 }
 $sql="SELECT name FROM users";
 $result=execute_sql($link,"member",$sql);
