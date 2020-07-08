@@ -10,7 +10,7 @@
 { 
 mysqli_select_db($link,$database)
       or die("無法連結:2:".mysqli_error($link)); 
-      $result=mysqli_query($link,$sql);    
+      $result=mysqli_query($link,$sql);
       return $result;
 } 
 ?>
