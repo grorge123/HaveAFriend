@@ -8,8 +8,17 @@ $link=create_connection();
 $sql="SELECT * FROM users where account='$account'";
 $result=execute_sql($link,"member",$sql);
 $font=mysqli_fetch_row($result);
-if($font != NULL && $font[2]==$password){
-    $username = $font[3];
+$sql = "describe users";
+$result = execute_sql($link, "member", $sql);
+$data = array();
+$tmp = 0;
+while($rol = mysqli_fetch_row($result)){
+    $rol[0];
+    $data[$rol[0]] = $font[$tmp];
+    $tmp += 1;
+}
+if($data != NULL && $data['password']==$password){
+    $username = $data['name'];
     setrawcookie("UserName","$username");
     echo "<h1>Hi ".$username."</hi>";
 }else{
@@ -18,6 +27,7 @@ if($font != NULL && $font[2]==$password){
         echo"history.back();";
         echo"</script>";
 }
+
 
 ?>
 <html>
