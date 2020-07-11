@@ -3,78 +3,38 @@
 <head>
     <title>加入會員</title>
     <meta charset="utf-8">
-    <script type="text/javascript">
-        check_data = function() {
-            if (document.getElementById('account').value.length == 0) {
-                alert("使用者帳號一定要填寫");
-                return false;
-            }
-            if (document.getElementById('account').value.length > 10) {
-                alert("使用者帳號不可以超過10個字元");
-                return false;
-            }
-            if (document.getElementById('password').value.length == 0) {
-                alert("使用者密碼一定要填寫");
-                return false;
-            }
-            if (document.getElementById('password').value.length > 10) {
-                alert("使用者密碼不可以超過10個字元");
-                return false;
-            }
-            if (document.getElementById('password').value.length == 0) {
-                alert("密碼確認欄位忘了填");
-                return false;
-            }
-            if (document.getElementById('password').value !== document.getElementById('re_password').value) {
-                alert("密碼確認欄位與使用者密碼欄位一定要相同");
-                return false;
-            }
-            if (document.getElementById('name').value.length == 0) {
-                alert("您一定要留下真實姓名");
-                return false;
-            }
-            if (document.getElementById('year').value.length == 0) {
-                alert("您忘了填出生年欄位");
-                return false;
-            }
-            if (document.getElementById('month').value.length == 0) {
-                alert("您忘了填出生月欄位");
-                return false;
-            }
-            if (document.getElementById('month').value > 12, document.getElementById('month').value < 1) {
-                alert("出生月應該介於1-12之間");
-                return false;
-            }
-            if (document.getElementById('day').value.length == 0) {
-                alert("您忘了填出生日欄位");
-                return false;
-            }
-            if (document.getElementById('month').value == 2 & document.getElementById('day').value > 29) {
-                alert("二月只有28天，最多29天");
-                return false;
-            }
-            if (document.getElementById('month').value == 4, document.getElementById('month').value == 6, document.getElementById('month').value == 9, document.getElementById('month').value == 11) {
-                if (document.getElementById('day').value > 30) {
-                    alert("4,6,9,11月只有30天");
-                    return false;
-                }
-            } else {
-                if (document.getElementById('day').value > 31) {
-                    alert("1,3,5,7,8,10,12月只有31天");
-                    return false;
-                }
-            }
-            if (document.getElementById('day').value > 31, document.getElementById('day').value < 1) {
-                alert("出生日應該在1-31之間");
-                return false;
-            }
-            document.getElementById("myForm").submit()
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap beging -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- bootstrap end -->
+
+
+    <link href="./css/signin.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 
-<body>
-    <form action="addmember.php" method="post" id="myForm">
+<body class="text-center">
+    <form class="form-signin">
+        <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
+        <h1 class="h6 mb-3 font-weight-normal">請填入下列資料(標示*欄位請務必填寫)</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2017-2020</p>
+    </form>
+
+    <!-- <form action="addmember.php" method="post" id="myForm">
         <table border="2" align="center" bordercolor="#6666FF">
             <tr>
                 <td colspan="2" bgcolor="#6666FF" align="center">
@@ -156,7 +116,75 @@
                 </td>
             </tr>
         </table>
-    </form>
+    </form> -->
 </body>
+<script type="text/javascript">
+    check_data = function() {
+        if (document.getElementById('account').value.length == 0) {
+            alert("使用者帳號一定要填寫");
+            return false;
+        }
+        if (document.getElementById('account').value.length > 10) {
+            alert("使用者帳號不可以超過10個字元");
+            return false;
+        }
+        if (document.getElementById('password').value.length == 0) {
+            alert("使用者密碼一定要填寫");
+            return false;
+        }
+        if (document.getElementById('password').value.length > 10) {
+            alert("使用者密碼不可以超過10個字元");
+            return false;
+        }
+        if (document.getElementById('password').value.length == 0) {
+            alert("密碼確認欄位忘了填");
+            return false;
+        }
+        if (document.getElementById('password').value !== document.getElementById('re_password').value) {
+            alert("密碼確認欄位與使用者密碼欄位一定要相同");
+            return false;
+        }
+        if (document.getElementById('name').value.length == 0) {
+            alert("您一定要留下真實姓名");
+            return false;
+        }
+        if (document.getElementById('year').value.length == 0) {
+            alert("您忘了填出生年欄位");
+            return false;
+        }
+        if (document.getElementById('month').value.length == 0) {
+            alert("您忘了填出生月欄位");
+            return false;
+        }
+        if (document.getElementById('month').value > 12, document.getElementById('month').value < 1) {
+            alert("出生月應該介於1-12之間");
+            return false;
+        }
+        if (document.getElementById('day').value.length == 0) {
+            alert("您忘了填出生日欄位");
+            return false;
+        }
+        if (document.getElementById('month').value == 2 & document.getElementById('day').value > 29) {
+            alert("二月只有28天，最多29天");
+            return false;
+        }
+        if (document.getElementById('month').value == 4, document.getElementById('month').value == 6, document.getElementById('month').value == 9, document.getElementById('month').value == 11) {
+            if (document.getElementById('day').value > 30) {
+                alert("4,6,9,11月只有30天");
+                return false;
+            }
+        } else {
+            if (document.getElementById('day').value > 31) {
+                alert("1,3,5,7,8,10,12月只有31天");
+                return false;
+            }
+        }
+        if (document.getElementById('day').value > 31, document.getElementById('day').value < 1) {
+            alert("出生日應該在1-31之間");
+            return false;
+        }
+        document.getElementById("myForm").submit()
+    }
+</script>
 
 </html>
