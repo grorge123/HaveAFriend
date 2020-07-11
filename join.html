@@ -18,20 +18,60 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="addmember.php" method="post" id="myForm">
         <!-- <img class="mb-4" src="" alt="" width="72" height="72"> -->
-        <h1 class="h6 mb-3 font-weight-normal">請填入下列資料(標示*欄位請務必填寫)</h1>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <h1 class="h2 mb-3 font-weight-normal">
+            <font face="DFKai-sb">請填入下列資料(標示*欄位請務必填寫)</font>
+        </h1>
+
+
+        <input type="text" id="account" class="form-control" placeholder="Account">
+        <input type="password" id="password" class="form-control" placeholder="Password">
+        <input type="password" id="re_password" class="form-control" placeholder="Please enter password again">
+        <input type="text" id="name" class="form-control" placeholder="Name">
+        <!-- <input type="radio" class="mb-6" name="sex" id="sex1" value="男" checked>男
+        <input type="radio" class="mb-6" name="sex" id="sex2" value="女">女 -->
+        <div class="container text-left">
+            <div class="text-left custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sex" name="sex" class="custom-control-input">
+                <label class="custom-control-label" for="sex">male</label>
+            </div>
+            <br>
+            <div class="text-left custom-control custom-radio custom-control-inline">
+                <input type="radio" id="sex2" name="sex" class="custom-control-input">
+                <label class="custom-control-label" for="sex2">female</label>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <input name="year" class="col-sm form-control" id="year" type="text">
+                <h3>
+                    <font face="DFKai-sb">年</font>
+                </h3>
+                <input name="month" class="col-sm form-control" id="month" type="text">
+                <h3>
+                    <font face="DFKai-sb">月</font>
+                </h3>
+                <input name="day" class="col-sm form-control" id="day" type="text">
+                <h3>
+                    <font face="DFKai-sb">日</font>
+                </h3>
+            </div>
+        </div>
+        <input type="text" id="telephone" class="form-control" placeholder="telephone">
+        <input type="text" id="cellphone" class="form-control" placeholder="cellphone">
+        <input type="text" id="address" class="form-control" placeholder="address">
+        <input type="text" id="email" class="form-control" placeholder="email">
+        <input type="text" id="url" value="http://" class="form-control" placeholder="url">
+        <input type="text" id="comment" class="form-control" placeholder="comment">
+
         <div class="checkbox mb-3">
             <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">© 2017-2020</p>
+        <button class="btn btn-lg btn-primary btn-block" type="reset">reset</button>
     </form>
 
     <!-- <form action="addmember.php" method="post" id="myForm">
