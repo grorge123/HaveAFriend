@@ -10,7 +10,6 @@ function produce_random(){
         if($c==3){$b=rand(0,9);}
         $randoma=$randoma.$b;
     }
-    echo ($randoma);
     $link = create_connection();
     $sql = "SELECT * FROM random where compare = '$randoma'";
     $result = execute_sql($link, "member", $sql);
@@ -18,24 +17,23 @@ function produce_random(){
         return produce_random();
     }
     mysqli_free_result($result);
-    $sql = "INSERT INTO random (compare) VALUES('$randoma')";
+    $time = getdate()[0];
+    $sql = "INSERT INTO random (compare, time) VALUES('$randoma', $time)";
     $result = execute_sql($link, "member", $sql);
-    return $random;
+    return $randoma;
 }
 
-function check_time_random(){
-    session_start();
-    $check=$_SESSION['key'];
+function check_time_random($check, $limit){
+
     //当需要使用时进行解密
     $link=create_connection();
+    $time_li = getdate()[0] - ($limit * 60);
+    execute_sql($link, "member", "delete from random where time < $time_li");
     $sql="SELECT * FROM random where compare='$check'";
     $result=execute_sql($link,"member",$sql);
     if(mysqli_num_rows($result) != 0){
 	    mysqli_free_result($result);
-        $sleep=$_COOKIE['username'];
-        $method='DES-ECB';
-        $str=var_dump(openssl_decrypt($sleep,$method,$check,0));
-        return;
+        return true;
     }else{
             mysqli_free_result($result);
             echo"<script type='text/javascript'>";
@@ -43,7 +41,12 @@ function check_time_random(){
             echo"session_destroy();";
             echo"window.location.href='http://127.0.0.1/index.html';";
             echo"</script>";
-            return;
+            return false;
     }
+}
+function decode_cookie(){
+    $sleep=$_COOKIE['username'];
+    $method='DES-ECB';
+    $str=var_dump(openssl_decrypt($sleep,$method,$check,0));
 }
 ?>
