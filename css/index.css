@@ -1,23 +1,30 @@
-.mlr-zero{
+.mlr-zero {
     margin-left: 0;
     margin-right: 0;
 }
-.plr-zero{
+
+.plr-zero {
     padding-left: 0;
     padding-right: 0;
 }
-@media (min-width: 400px){
-    .custom-control-container{
+
+@media (min-width: 400px) {
+    .custom-control-container {
         width: 100%;
     }
 }
-  
-  
-@media (min-width: 768px){
-    .custom-control-container{
+
+@media (min-width: 768px) {
+    .custom-control-container {
         width: 100%;
     }
 }
-.cu{
-    width: 1800px;
+
+.text-color {
+    color: #ffffff;
+}
+
+footer,
+.copyright {
+    background: #3C3C3C;
 }

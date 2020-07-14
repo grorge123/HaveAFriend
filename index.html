@@ -1,43 +1,175 @@
-﻿<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="h-100">
 
 <head>
-    <meta charset="utf-8">
-    <script type="text/javascript">
-        check_data = function() {
-            if (document.getElementsByName('account')[0].value.length == 0) {
-                alert("請填入帳號");
-                return false;
-            }
-            if (document.getElementsByName('password')[0].value.length == 0) {
-                alert("請輸入密碼");
-                return false;
-            }
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-            document.getElementById("myFont").submit()
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Sticky Footer Navbar Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+    <link href="./css/index.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-    </script>
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 
-<body>
-    <form action="checkpwd.php" method="Post" id="myFont">
+<body class="d-flex flex-column h-100">
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="https://127.0.0.1">Have A Friend</a>
+            <div class="container text-center">
+                <!-- <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul> -->
+                <div class="col">
+                    <form class="form-inline mt-2 mt-md-0" action="checkpwd.php" method="Post" id="myFont">
+                        <input class="form-control col-9 mr-2 mb-2" type="text" placeholder="Account">
+                        <button class="btn btn-outline-success mr-2 mb-2 my-sm-0 col-2" type="submit">Sign in</button>
+                        <input class="form-control col-9 mr-2" type="password" placeholder="Password">
+                        <button class="btn btn-outline-success my-2 my-sm-0 col-2" type="reset">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <p>
-            <font>帳號:<input name="account"></input>
-            </font>
-        </p>
+    <!-- Begin page content -->
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                <!-- <img src="./img/index.jpg" class="img-fluid" alt="Responsive image"> -->
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <rect width="100%" height="100%" style="fill:#BEBEBE;;stroke-width:10;opacity:.5;"/>
+                </svg>
+            </div>
+            <div class="col-4 text-center">
+                <form class="form-signin" action="addmember.php" method="post" id="myForm">
+                    <h1 class="h2 mb-3 font-weight-normal">
+                        <font face="DFKai-sb">註冊<br>(標示*欄位請務必填寫)</font>
+                    </h1>
 
-        <p>
-            <font>密碼:<input type="password" name="password"></input>
-            </font>
-        </p>
 
-        <input value="登入" type="button" onclick="check_data()"></input>
+                    <input type="text" id="account" class="form-control" placeholder="Account">
+                    <input type="password" id="password" class="form-control" placeholder="Password">
+                    <input type="password" id="re_password" class="form-control" placeholder="Please enter password again">
+                    <input type="text" id="name" class="form-control" placeholder="Name">
+                    <div class="container text-left">
+                        <div class="text-left custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="sex" name="sex" class="custom-control-input">
+                            <label class="custom-control-label" for="sex">male</label>
+                        </div>
+                        <br>
+                        <div class="text-left custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="sex2" name="sex" class="custom-control-input">
+                            <label class="custom-control-label" for="sex2">female</label>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <input name="year" class="col-sm form-control" id="year" type="text">
+                            <h3>
+                                <font face="DFKai-sb">年</font>
+                            </h3>
+                            <input name="month" class="col-sm form-control" id="month" type="text">
+                            <h3>
+                                <font face="DFKai-sb">月</font>
+                            </h3>
+                            <input name="day" class="col-sm form-control" id="day" type="text">
+                            <h3>
+                                <font face="DFKai-sb">日</font>
+                            </h3>
+                        </div>
+                    </div>
+                    <input type="text" id="telephone" class="form-control" placeholder="telephone">
+                    <input type="text" id="cellphone" class="form-control" placeholder="cellphone">
+                    <input type="text" id="address" class="form-control" placeholder="address">
+                    <input type="text" id="email" class="form-control" placeholder="email">
+                    <input type="text" id="url" value="http://" class="form-control" placeholder="url">
+                    <input type="text" id="comment" class="form-control" placeholder="comment">
 
-        <input value="清除" type="reset">
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me" name = "remember"> Remember me
+                            </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
-        <input value="註冊" type="button" onclick="location.href='join.html'"></input>
-    </form>
+    <!-- footer -->
+    <footer class=" mt-3" id="contact ">
+        <div class="container py-md-5 py-3 ">
+            <div class="row footer-grids ">
+                <div class="col-lg-7 col-sm-6 mb-md-0 mb-sm-5 mb-4 ">
+                    <h4 class="mb-4 text-color">通訊方式</h4>
+                    <p><span class="fa mr-2 fa-envelope "></span><a href="ccsh@webmail.ccsh.tp.edu.tw ">ccsh@webmail.ccsh.tp.edu.tw</a></p>
+                </div>
+                <div class="col-lg-5 col-sm-6 mb-lg-0 mb-sm-5 mb-4 ">
+                    <h4 class="mb-4 text-color">其他連結</h4>
+                    <ul>
+                        <li><a href="">Facebook粉絲專頁</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- copyright -->
+    <div class="copyright ">
+        <div class="container py-4 ">
+            <div class=" text-center ">
+                <p>© 2019 All Rights Reserved | Design by grorge </p>
+            </div>
+        </div>
+    </div>
+    <!-- //copyright -->
 </body>
 
 </html>
