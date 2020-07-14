@@ -1,0 +1,23 @@
+.mlr-zero{
+    margin-left: 0;
+    margin-right: 0;
+}
+.plr-zero{
+    padding-left: 0;
+    padding-right: 0;
+}
+@media (min-width: 400px){
+    .custom-control-container{
+        width: 100%;
+    }
+}
+  
+  
+@media (min-width: 768px){
+    .custom-control-container{
+        width: 100%;
+    }
+}
+.cu{
+    width: 1800px;
+}
