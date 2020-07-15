@@ -44,7 +44,7 @@ function check_time_random($check, $limit){
             return false;
     }
 }
-function decode_cookie(){
+function decode_cookie($check){
     $sleep=$_COOKIE['username'];
     $method='DES-ECB';
     $str=var_dump(openssl_decrypt($sleep,$method,$check,0));
