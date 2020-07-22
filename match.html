@@ -1,34 +1,47 @@
-<html>
+﻿<html>
 <head>
 <meta charset="UTF-8">
-<style>
-FONT{font-weight:bold;font-size:large;}
-table{
+<style type="text/css">
+@import url(match.css);
 </style>
 <script>
 </script>
 </head>
 <body>
-<CENTER>
-<form >
-<table>
+<header id="header"><h1>Welcome to Have a friend</h1></header>
+<aside id="aside">
+<h3>xxx歡迎您的使用</h3>
+<form method="xxx.php">
+<table id="table_1" frame="box">
 <tr>
 <td><FONT>男:<left><input type="checkbox" value="boy" name="gender_1"></left></FONT></td>
 <td><FONT>女:<right><input type="checkbox" value="girl" name="gender_2"></right></FONT></td>
 </tr>
-<p>
-<p>
 <tr>
 <td><FONT>聊天:<input type="checkbox" value="chat" name="text_1"></FONT></td>
 <td><FONT>交往:<input type="checkbox" value="contact" name="be_Friend"></FONT></td>
 </tr>
-<p>
 <tr>
-<td><input type="button" value="匹配" name="match"></td>
+<td><FONT>嗜好:<input type="text" name="habit" list="interest" size="15"></FONT></td>
+<datalist id="interest">
+<option value="旅遊">
+<option value="遊戲">
+<option value="音樂">
+<option value="偶像">
+<option value="戲劇">
+<option value="跳舞">
+<option value="唱歌">
+<option value="讀書">
+</datalist>
+</tr>
+<tr>
+<td><input type="submit" value="匹配" name="match"></td>
 <td><input type="reset"  value="清除" name="casue"></td>
 </tr>
 </table>
 </FORM>
-</CENTER>
+</aside>
+<selection id="selection">朋友信息</selection>
+<footer id="footer"><h2>make in 2020/7/22</h2></footer>
 </body>
 </html>
