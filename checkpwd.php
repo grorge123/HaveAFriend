@@ -3,7 +3,6 @@ require("dbtools.inc.php");
 require("key.inc.php");
 session_start();
 $_SESSION['key']=produce_random();
-echo $_SESSION['key']."<br>";
 $account=$_POST['account'];
 $password=$_POST['password'];
 $username = "";
@@ -19,13 +18,13 @@ if($data != NULL && $data['password']==$password){
         echo"alert('你的帳號密碼錯誤');";
         echo"history.back();";
         echo"</script>";
+        exit();
 }
 $method='DES-ECB';
 $str = serialize($username); //将用户信息序列化
 
-$str =openssl_encrypt($str, $method, $_SESSION['key'],0);
+$str = openssl_encrypt($str, $method, $_SESSION['key'],0);
 echo "用户信息加密后：".$str;
-//将加密后的用户数据存储到cookie中
 setcookie('username', $str);
 
 ?>

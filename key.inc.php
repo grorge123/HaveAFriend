@@ -1,7 +1,7 @@
 <?php
 require_once("dbtools.inc.php");
 function produce_random(){
-    error_reporting(0);
+    $randoma = '';
     $random=10;
     for ($i=1;$i<=$random;$i=$i+1){
         $c=rand(1,3);
